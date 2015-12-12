@@ -1,0 +1,30 @@
+{
+  "name": "jirasic",
+  "description": "Big picture for Atlassian JIRA",
+  "main": "main.module.js",
+  "authors": [
+    "Bartek Borowinski"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "visualization",
+    "jira"
+  ],
+  "homepage": "https://github.com/bborowin/jirasic",
+  "moduleType": [
+    "node"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.0.3",
+    "d3": "^3.5.0",
+    "angular": "^1.4.8"
+  }
+}

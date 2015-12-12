@@ -1,0 +1,30 @@
+{
+  "name": "jirasic",
+  "version": "0.0.0",
+  "description": "Big picture for Atlassian JIRA",
+  "main": "main.module.js",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-wiredep": "^2.0.0",
+    "wiredep": "^2.2.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bborowin/jirasic.git"
+  },
+  "keywords": [
+    "visualization",
+    "jira"
+  ],
+  "author": "Bartek Borowinski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bborowin/jirasic/issues"
+  },
+  "homepage": "https://github.com/bborowin/jirasic#readme"
+}
