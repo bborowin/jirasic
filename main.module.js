@@ -1,1 +1,2 @@
-angular.module('jirasic', []);
+angular.module('jirasic', [])
+.constant('_', window._);

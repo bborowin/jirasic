@@ -25,6 +25,7 @@
   "dependencies": {
     "bootstrap": "~3.0.3",
     "d3": "^3.5.0",
+    "lodash": "~3.10.1",
     "angular": "^1.4.8"
   }
 }

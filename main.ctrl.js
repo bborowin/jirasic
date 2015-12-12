@@ -1,4 +1,4 @@
-angular.module('jirasic').controller('display', function() {
+angular.module('jirasic').controller('Display', ['dataService', function(dataService) {
 
 	function go(data) {
 	   d3.select("body").selectAll("p")
@@ -17,8 +17,16 @@ angular.module('jirasic').controller('display', function() {
 
 	// go(data);
 
+	var width = 1000,
+		height = 650;
+
     // create a svg container
     var vis = d3.select("body").
         append("svg:svg")
+        	.attr("width", width)
+        	.attr("height", height)
 	        .attr("class", "graph-svg-component");
-});
+
+	var jiras = dataService.prepareData(data);
+	
+}]);
