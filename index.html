@@ -3,13 +3,22 @@
    <head>
       <meta charset="utf-8">
       <title>D3 Test</title>
-      <script type="text/javascript" src="js/d3.v3.min.js"></script>
-      <script type="text/javascript" src="init.js"></script>
-      <script type="text/javascript" src="data-resolved.js"></script>
+      <!-- bower:css -->
+      <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+      <!-- endbower -->
    </head>
    <body>
-      <script type="text/javascript">
-         go(data());
-      </script>
+      <!-- bower:js -->
+      <script src="bower_components/jquery/dist/jquery.js"></script>
+      <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+      <script src="bower_components/d3/d3.js"></script>
+      <script src="bower_components/angular/angular.js"></script>
+      <!-- endbower -->
+      <script src="main.module.js"></script>
+      <script src="main.ctrl.js"></script>
+      <script src="data-resolved.js"></script>
+      <div ng-app="jirasic">
+         <div ng-controller="display"></div>
+      </div>
    </body>
 </html>
