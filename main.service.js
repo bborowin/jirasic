@@ -1,14 +1,21 @@
-angular.module('jirasic').service('dataService', function() {
+angular.module('jirasic').service('dataService', dataService);
+
+function dataService() {
 	return {
-		prepareData: function (json) {
-			var items = _.map(json(), function(j) {
-				return {
-					created: j.created,
-					resolved: j.resolved
+		getExtents: function (json) {
+			var minDate, maxDate;
+			var f = d3.time.format('%Y-%m-%dT%H:%M:%S.%L%Z')
+
+			_.forEach(json(), function(j) {
+				if (!minDate || minDate > j.created) {
+					minDate = j.created;
+				}
+				if (!maxDate || maxDate < j.resolved) {
+					maxDate = j.resolved;
 				}
 			});
 
-			return items;
+			return [f.parse(minDate), f.parse(maxDate)];
 		}
 	};
-});
+}
