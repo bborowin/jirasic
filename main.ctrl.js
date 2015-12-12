@@ -15,5 +15,10 @@ angular.module('jirasic').controller('display', function() {
 	      })
 	}
 
-	go(data);
+	// go(data);
+
+    // create a svg container
+    var vis = d3.select("body").
+        append("svg:svg")
+	        .attr("class", "graph-svg-component");
 });
