@@ -1,8 +1,6 @@
 angular.module('jirasic').controller('Display', ['dataService', 'canvasService', DisplayCtrl]);
 
 function DisplayCtrl(dataService, canvasService) {
-	var parseDate = d3.time.format('%Y-%m-%d').parse;
-
 	var params = {
 		margin: {top: 30, right: 20, bottom: 30, left: 50},
 		width: 1200,
@@ -14,16 +12,7 @@ function DisplayCtrl(dataService, canvasService) {
 
 	var svg = c.svg;
 
-	var items = dataService.roundDates(data);
-	_.forEach(items, function(item, index) {
-        item.date = parseDate(item.created);
-        if (item.resolved) {
-            item.end = parseDate(item.resolved);
-        } else {
-            item.end = item.date;
-        }
-		item.index = index;
-	});
+	var items = dataService.prepareData(data);
 
     var m = 15;
 	c.scales.x.domain(d3.extent(items, function(d) { return d.date; }));
