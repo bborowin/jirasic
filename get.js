@@ -67,7 +67,7 @@ var handle = function(response) {
     retrieve(index, batchSize).then(handle);
   } else {
     console.log('Total issues retrieved: ' + issues.length);
-    fs.writeFile('data/issues.json', JSON.stringify(issues));
+    fs.writeFile('data/issues.json', JSON.stringify({issues: issues}));
   }
 };
 
