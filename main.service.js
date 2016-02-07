@@ -1,11 +1,12 @@
-angular.module('jirasic').service('dataService', dataService);
+angular.module('jirasic')
+    .service('dataService', ['$http', dataService]);
 
-function dataService() {
+function dataService($http, dataService) {
     this.parseDate = d3.time.format('%Y-%m-%d').parse;
 
 	this.roundDates = function(items) {
 		var f = d3.time.format('%Y-%m-%d');
-		var dates = _.map(items(), function(item) {
+		var dates = _.map(items, function(item) {
 			item.created = item.created.split('T')[0];
 			if(item.resolved) {
 				item.resolved = item.resolved.split('T')[0];
@@ -15,7 +16,7 @@ function dataService() {
 
 		return dates;
 	};
-    
+
     this.prepareData = function(data) {
         var items = this.roundDates(data);
         _.forEach(items, function(item, index) {
@@ -28,5 +29,9 @@ function dataService() {
             item.index = index;
         }, this);
         return items;
+    };
+
+    this.fetchData = function(path) {
+        return $http.get(path);
     };
 }
